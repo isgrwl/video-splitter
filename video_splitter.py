@@ -3,7 +3,7 @@ from zipfile import *
 import os
 
 
-def splitVideo(n,c,ff="mp4",t=None,f=None): 
+def splitVideo(n,c,fe="mp4",t=None,fps=None):  #n=name of video to split,c=clipsize,ff=file extension,t=threads to render with, fps= fps of each clip
     video = VideoFileClip(n) 
 
     clipSize = c #size of each clip
@@ -22,7 +22,7 @@ def splitVideo(n,c,ff="mp4",t=None,f=None):
     subclips.append(video.subclip(cleanVideoLength,video.duration)) # turn remaining time into final clip
 
     for i in range(len(subclips)): 
-        newClipName= f"clip({i+1}).{ff}"
+        newClipName= f"clip({i+1}).{fe}"
         subclips[i].write_videofile(newClipName,threads=t,fps=f) #create a video file for each subclip
         filesToZip.append(newClipName)
 
