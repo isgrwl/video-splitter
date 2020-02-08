@@ -2,8 +2,7 @@ from moviepy.editor import * #import editor library
 from zipfile import *
 import os
 
-
-def splitVideo(n,c,fe="mp4",t=None,fps=None):  #n=name of video to split,c=clipsize,ff=file extension,t=threads to render with, fps= fps of each clip
+def splitVideo(n,c,fe,t,fps): 
     video = VideoFileClip(n) 
 
     clipSize = c #size of each clip
@@ -12,7 +11,7 @@ def splitVideo(n,c,fe="mp4",t=None,fps=None):  #n=name of video to split,c=clips
     filesToZip = []
 
     try:
-        os.remove("clips.zip") #remove existing clips zip file
+        os.remove("clips.zip") #remove existing clips zip file in case program is run multiple times
     except:
         pass
 
@@ -33,5 +32,14 @@ def splitVideo(n,c,fe="mp4",t=None,fps=None):  #n=name of video to split,c=clips
     for clip in filesToZip: #delete all the unzipped files
         os.remove(clip)
 
+def main():
+    fileName = "sample.mp4" #name of input file
+    clipLength = 60 #length of output clips (in seconds)
+    fileType = ".mp4" #output clip filetype
+    threads = 1 #change this to however many threads your pc can use
+    fps = 30 #fps of output clips
 
-splitVideo("sample.mp4",15,"mp4",1,30)
+    splitVideo(fileName,clipLength,fileType,threads,fps)
+
+
+main()
