@@ -13,4 +13,4 @@ To install:
 pip install moviepy
 ```
 
-The script should work from there.
+The script should run after that.
