@@ -1,4 +1,4 @@
-from moviepy.editor import * #import editor library
+from moviepy.editor import * #import MoviePy
 from zipfile import *
 import os
 
