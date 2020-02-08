@@ -13,4 +13,4 @@ To install:
 pip install moviepy
 ```
 
-The script should run after that.
+After installing MoviePy, you can change the variables inside the main function to whatever you'd like for your desired clips.
