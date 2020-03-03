@@ -2,7 +2,7 @@
 
 ## Description
 
-Simple python script that uses MoviePy to split videos into smaller clips. This is useful for platforms that limit the length of videos that can be posted.
+Simple python script that uses MoviePy to split videos into smaller clips. This is useful for platforms that limit the length of videos that can be posted, like Instagram and Snapchat.
 
 ## Setup
 
