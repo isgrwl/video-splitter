@@ -2,7 +2,7 @@ from moviepy.editor import * #import MoviePy
 from zipfile import *
 import os
 
-def splitVideo(n,c,fe,t,fps): 
+def splitVideo(n,c,fe,fps): 
     video = VideoFileClip(n) 
 
     clipSize = c #size of each clip
@@ -36,10 +36,9 @@ def main():
     fileName = "sample.mp4" #name of input file
     clipLength = 60 #length of output clips (in seconds)
     fileType = ".mp4" #output clip filetype
-    threads = 1 #change this to however many threads your pc can use
     fps = 30 #fps of output clips
 
-    splitVideo(fileName,clipLength,fileType,threads,fps)
+    splitVideo(fileName,clipLength,fileType,fps)
 
 
 main()
